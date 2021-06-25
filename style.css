@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 
+Font TITRES :
+font-family: 'Roboto', sans-serif; 
+*/
+
+/*Variable Couleur Principale*/
+:root {
+    --color: #1c2161;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    transition: 400ms;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* INDEX */
+
+.article__title{
+    background-color: #1c216121;
+    padding: 10px 0;
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+    color: #1c2161;
+    ;
+}
+
+.article__name{
+    font-family: 'Kirang Haerang', cursive;
+    font-size: 26px;
+    color: var(--color);
+    margin: 12px 0;
+    text-align: center;
+}
+
+.article__description{
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.article__price{
+    text-align: center;
+    font-family: 'Kirang Haerang', cursive;
+    font-weight: bold;
+    color: rgb(122, 16, 16);
+    margin-bottom: 10px;
+}
+
+.article__img{
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow:2px 2px 10px 2px #cbcbce;
+}
+
+.article__img:hover {
+    transform: scale(1.1);
+}
+
+.article__btn{
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(59,59,138,1) 35%, rgba(175,218,246,1) 100%);
+    box-shadow:2px 2px 10px 2px #72728a;
+}
+
+.article__btn:hover {
+    transform: scale(1.05);
+    filter: brightness(120%); 
+    box-shadow:2px 2px 10px 2px #dad6d6;
+    cursor: pointer;
+}
+
+#produits{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px;
+}
+
+#produits img{
+    width: 200px;
+    height: 170px;
+}
+
+#produits div{
+    width: 200px;
+}
+
+/*ERROR*/
+#errorGestion {
+    color: var(--color);
+    margin: 20px;
+}
+
+/*LOADER*/
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--color);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color);
+    padding: 20px 40px;
+}
+
+.header__title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 38px;
+    color: white;
+}
+
+.header__icon {
+    font-size: 20px;
+    color: black;
+}
+
+.header__icon:hover {
+    transform: scale(1.2);
+}
+
+.header__count {
+    position: absolute;
+    text-align: center;
+    right: 22px;
+    top: 10px;
+    background-color: white;
+    color: var(--color);
+    border-radius: 50%;
+    width: auto;
+    height: auto;
+    min-width: 25px;
+    min-height: 25px;
+    padding: 2px;
+}
+
+/* footer */
+
+.footer {
+    margin-top: 50px;
+    background-color: var(--color);
+    width: 100%;
+    padding: 30px;
+}
+
+.footer__title {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+
+}
+
+.footer__contact {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+}
+
+.footer__contact>li {
+    margin-bottom: 10px;
+}
+
+.footer>a {
+    color: white;
+}
+
+
+.display-none {
+    display: none;
+}

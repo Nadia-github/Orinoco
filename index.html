@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <title>Orinoco </title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="./style.css">
+            <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="../fontawesome-free-5.12.0-web/css/font-awesome.min.css">
+            <script src="./JS/main.js" defer></script>
+        </head>
+        <body>
+            <header class="header">
+                <p class="header__title"><a href="index.html">Orinoco</a></p>
+                <a href="./html/panier.html"><i class="fas fa-shopping-cart header__icon"></i>
+                    <span class="header__count" id="counter">0</span>
+                </a>
+            </header>
+        
+            <section class="article">
+                <h1 class="article__title">Articles</h1>
+                <div id="produits">
+
+                </div>
+                <div class="lds-ellipsis" id="loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <span class="display-none" id="errorGestion">Oups :/ il semblerait qu'une erreur soit survenue.
+                    Merci de recharger la page, si l'erreur persiste merci de nous la signaler
+                    via contact.orinico@email.com :)</span>
+                <div class="article__container" id="container"></div>
+            </section>
+        
+            <footer class="footer">
+                <h2 class="footer__title">Contact</h2>
+                <ul class="footer__contact">
+                    <li>E-mail : <a href="mailto:contact.orinico@email.com">contact.orinico@email.com</a></li>
+                    <li>Tel : 0164584769</li>
+                    <li>Adresse : 12 allée des roses, 91170 Viry-Chatillon</li>
+                </ul>
+            </footer>
+        </body>
+    </html>
+
