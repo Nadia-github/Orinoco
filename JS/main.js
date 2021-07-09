@@ -5,30 +5,23 @@ var products = []; // Contient la liste des produits
 var panier = []; // Contient le panier + la quantitée
 
 
-// - DEFINITION DES FONCTIONS -
-//   ************************
+/*
+let price = (products[i].price)
 
-//main ()
-
-function main() {
-    const articles = getArticles()
-    displayArticles(articles)
+function get_price(price){
+    let str = price.toString()
+    let centimals = str.slice(-2)
+    return str.slice(0, str.length - 2) + "," + centimals
 }
 
-function getArticles() {
-    fetch()
-}
 
-function displayArticles() {
-    return ""
-}
-//
+*/
+
+
+
 
 // Récupération des données de l'API
-
-let test= document.getElementById("produits")
-
-
+let get_products= document.getElementById("produits")
 function callApi() {
     fetch('http://localhost:3000/api/teddies')
         .then(response => response.json())
@@ -42,9 +35,11 @@ function callApi() {
                 + "<p  class='article__description'>" + products[i].description + "</p>"
                 + "<div class='article__price'>" + products[i].price + "€</div>"
                 + "<img class='article__img' src='"+ products[i].imageUrl +"'>"
-                + "<div class='article__btn'>" + "Ajouter" + "</div>"
+                + "<a href='product.html?id="+products[i]._id +"'>" 
+                + "<div class='article__btn'> Voir le produit </div>"
+                + "</a>"
 
-                test.appendChild(div)
+                get_products.appendChild(div)
             }
 
             //panierInit() // Initialisation du localStorage 
