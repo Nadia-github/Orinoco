@@ -5,7 +5,6 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="./style.css">
-            <script src="./JS/panier.js"></script>
         </head>
         <body>
             <header class="header">
@@ -18,11 +17,10 @@
             <section class="panier">
 
                 <div class="panier__ctn" id="container">
-                    <h1 class="panier__ctn__title">Panier</h1>
+                    <h1 class="panier__ctn__title">Votre panier</h1>
                 </div>
         
                 <form class="panier__form" id="form">
-                    <h2 class="panier__form__total" id="totalForm">TOTAL : </h2>
         
                     <span class="panier__form__error display-none" id="lastNameError">Le nom doit être seulement composé des lettres de l'alphabet.</span>
                     <input type="text" id="lastName" placeholder="Nom" required onchange="formValidity()">
@@ -51,5 +49,6 @@
                 </ul>
             </footer>
         </body>
+        <script src="./JS/panier.js"></script>
     </html>
 

@@ -5,18 +5,13 @@ var products = []; // Contient la liste des produits
 var panier = []; // Contient le panier + la quantitée
 
 
-/*
-let price = (products[i].price)
+// Affichage des centimes sur les prix
 
 function get_price(price){
     let str = price.toString()
     let centimals = str.slice(-2)
     return str.slice(0, str.length - 2) + "," + centimals
 }
-
-
-*/
-
 
 
 
@@ -33,7 +28,7 @@ function callApi() {
                 div.innerHTML=
                   "<h2 class='article__name'>" + products[i].name + "</h2>"
                 + "<p  class='article__description'>" + products[i].description + "</p>"
-                + "<div class='article__price'>" + products[i].price + "€</div>"
+                + "<div class='article__price'>" + get_price(products[i].price) + "€</div>"
                 + "<img class='article__img' src='"+ products[i].imageUrl +"'>"
                 + "<a href='product.html?id="+products[i]._id +"'>" 
                 + "<div class='article__btn'> Voir le produit </div>"
