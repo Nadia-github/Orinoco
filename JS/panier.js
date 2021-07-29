@@ -27,26 +27,30 @@ function displayPanier() {
         for (let key in storagePanier) {
             if (storagePanier[key].quantite > 0) {
                 let parent = document.getElementById("container");
-                let product = storagePanier[key];
                 parent.innerHTML+=`
                     <div id="container__article">  
                         <div class="panier__ctn__article" id="ctn${storagePanier[key]._id}">
                             <img src="${storagePanier[key].imageUrl}" alt="" width= "100px">
                             <h3 class="panier__ctn__article__nom">${storagePanier[key].nom}</h3>
                             <input type="number" id="${key}" min="0" value="${storagePanier[key].quantite}">
-                            <p id="total${storagePanier[key]._id}">${(storagePanier[key].prix * storagePanier[key].quantite / 100).toFixed(2)}€</p>
-                            <button id="${storagePanier[key]._id}" onclick="deleteProduct(id)">Supprimer</button>
+                            <p>${(storagePanier[key].prix * storagePanier[key].quantite / 100).toFixed(2)}€</p>
+                            <button onclick="deleteProduct (id)">Supprimer</button>
                         </div>
                     </div>
                     `
-                var input = document.getElementById(key)
-                console.log(input)
-                input.addEventListener("change click keyup",()=>{
-                    console.log(this.value)
-                    changePanier(product, this.value)
-                  })
-                total += (storagePanier[key].prix * storagePanier[key].quantite/100);
+                      total += (storagePanier[key].prix * storagePanier[key].quantite/100);
             }
+        }
+        for (let key in storagePanier){
+          let product = storagePanier[key];
+          var input = document.getElementById(key)
+          input.addEventListener("change", function(){
+                    console.log(this.value)
+                    console.log(product)
+                    changePanier(key, product, this.value)
+                    let value = parseInt(this.value) * parseInt(product.prix);
+                    this.nextElementSibling.innerHTML = value.toFixed(2)/100 + " " +" €";
+                  })  
         }
         console.log(total)
 }
@@ -66,7 +70,7 @@ function displayTotal() {
 // Gestion du changement de quantité produit
 // Fonction appelé dans le HTML
 
-function changePanier(product, quantite) {
+function changePanier(key, product, quantite) {
     console.log(quantite)
     if (!localStorage.counter){
       localStorage.counter = quantite
@@ -77,9 +81,9 @@ function changePanier(product, quantite) {
       localStorage.panier=JSON.stringify({})
     }
     let panierBefore = JSON.parse(localStorage.panier);
-    let panierProduct = panierBefore[product._id]
+    let panierProduct = panierBefore[key]
       if (panierProduct) {//Mettre a jour le local storage avec les quantités
-        panierBefore[product._id].quantite = quantite 
+        panierBefore[key].quantite = quantite 
       }else{//créer l'élément dans le local storage
         let element={
           "nom": product.name, 
@@ -87,7 +91,7 @@ function changePanier(product, quantite) {
           imageUrl: product.imageUrl,
           quantite: quantite,
         }
-        panierBefore[product._id]= element
+        panierBefore[key]= element
       }
       localStorage.panier=JSON.stringify(panierBefore)
   }
