@@ -193,6 +193,8 @@ form button:hover{
     padding: 30px 0;
     display: flex;
     justify-content: center;
+    font-family: 'Kirang Haerang', cursive;
+    color: var(--color);
 }
 
 #container__article{
@@ -279,6 +281,23 @@ input::placeholder {
     width: 50%;
 }
 
+
+/* PAGE CONFIRMATION */
+
+.confirmation{
+    padding: 120px 30px;
+    margin: auto;
+    text-align: center;
+}
+
+.confirmation__contact{
+    padding-top: 20px;
+}
+
+.confirmation__contact a{
+    color: navy;
+    font-style: italic;
+}
 
 /*ERROR*/
 #errorGestion {

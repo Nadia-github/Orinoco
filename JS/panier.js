@@ -38,7 +38,6 @@ function displayPanier() {
                         </div>
                     </div>
                     `
-                      total += (storagePanier[key].prix * storagePanier[key].quantite/100);
             }
         }
         for (let key in storagePanier){
@@ -49,23 +48,31 @@ function displayPanier() {
                     console.log(product)
                     changePanier(key, product, this.value)
                     let value = parseInt(this.value) * parseInt(product.prix);
-                    this.nextElementSibling.innerHTML = value.toFixed(2)/100 + " " +" €";
+                    this.nextElementSibling.innerHTML = (value/100).toFixed(2) +" €"; 
+                    displayTotal()
                   })  
         }
         console.log(total)
 }
-
+      
 
 // Affichage du total
 function displayTotal() {
-        console.log(total)
+  total = 0
+  storagePanier = JSON.parse(localStorage.panier);
+  for (let key in storagePanier) {
+    if (storagePanier[key].quantite > 0) {
+      total += (storagePanier[key].prix * storagePanier[key].quantite/100);
+    }
+}
         if (total > 0) {
             let parent = document.getElementById("container");
-            parent.insertAdjacentHTML('beforeend', `
-                        <h2 class="panier__ctn__total" id="total">TOTAL : ${total.toFixed(2)} €</h2> 
-                    `);
+            let divTotal = document.getElementById("total")
+            divTotal.innerHTML= `TOTAL : ${total.toFixed(2)} €`
+            
         }
 }
+
 
 // Gestion du changement de quantité produit
 // Fonction appelé dans le HTML
@@ -96,37 +103,30 @@ function changePanier(key, product, quantite) {
       localStorage.panier=JSON.stringify(panierBefore)
   }
   
-
-
-/*
-function changeAmount(id) {
-    let panierBefore = JSON.parse(localStorage.panier);
-    for (let element of panierBefore) {
-        if (element._id === id) {
-            element.quantite = document.getElementById(`${id}`).value;
-            document.getElementById(`total${id}`).textContent = `${(element.price * element.quantite / 100).toFixed(2)}€`;
-
-            total = 0;
-
-            for (let element of panierBefore) {
-                if (element.quantite > 0) {
-                    total += (element.price * element.quantite / 100);
-                }
-            }
-
-            document.getElementById("totalForm").innerHTML = `TOTAL : ${total.toFixed(2)} €`;
-            document.getElementById("total").innerHTML = `TOTAL : ${total.toFixed(2)} €`;
-
-            if (element.quantite == 0) {
-                let obj = document.getElementById(`ctn${id}`);
-                obj.delete()
-            }
-        }
-    }
-    localStorage.setItem("panier", JSON.stringify(panierBefore));
-};
-*/
-
+function sendPanier (){
+  const contact = {
+    firstName: document.getElementById("firstName").value,
+    lastName : document.getElementById("lastName").value,
+    email : document.getElementById("email").value,
+    city : document.getElementById("city").value,
+    address : document.getElementById("address").value,
+    zip : document.getElementById("zip").value,
+  }
+  let products = []
+  storagePanier = JSON.parse(localStorage.panier);
+  for (let key in storagePanier) {
+    products.push(key)
+  }
+  fetch('http://localhost:3000/api/teddies', {
+    method : "POST",
+    body : JSON.stringify({
+      contact : contact,
+      products : products,
+    })
+  })
+  .then(response => response.json())
+  .then(products => {})
+}
 
 
 displayPanier()
