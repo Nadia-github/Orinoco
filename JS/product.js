@@ -84,4 +84,5 @@ function displayCart(){
   }
   counter.innerHTML= localStorage.counter
 }
+displayCart()
 

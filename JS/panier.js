@@ -78,17 +78,16 @@ function displayTotal() {
 // Fonction appelé dans le HTML
 
 function changePanier(key, product, quantite) {
-    console.log(quantite)
+  let panierBefore = JSON.parse(localStorage.panier);
+  let panierProduct = panierBefore[key]
     if (!localStorage.counter){
       localStorage.counter = quantite
     }else{
-      localStorage.counter = parseInt(localStorage.counter) + quantite
+      localStorage.counter = parseInt(localStorage.counter) + parseInt(quantite) - parseInt(panierBefore[key].quantite)
     }
     if (!localStorage.panier){
       localStorage.panier=JSON.stringify({})
     }
-    let panierBefore = JSON.parse(localStorage.panier);
-    let panierProduct = panierBefore[key]
       if (panierProduct) {//Mettre a jour le local storage avec les quantités
         panierBefore[key].quantite = quantite 
       }else{//créer l'élément dans le local storage
@@ -117,17 +116,44 @@ function sendPanier (){
   for (let key in storagePanier) {
     products.push(key)
   }
-  fetch('http://localhost:3000/api/teddies', {
+  fetch('http://localhost:3000/api/teddies/order', {
     method : "POST",
     body : JSON.stringify({
       contact : contact,
       products : products,
-    })
+    }),
+      headers : {
+        "Content-Type" : "application/json"
+      }
   })
   .then(response => response.json())
-  .then(products => {})
+  .then(order => {
+    localStorage.setItem ("idCommande", order.orderId)
+    localStorage.setItem ("total", total)
+    window.location.href= "confirmation.html"
+  })
 }
 
+var valider = document.getElementById("btn")
+  valider.addEventListener("click", function(e){
+    var form = document.getElementById("form")
+    if(!form.checkValidity()){
+    return
+    }else{
+    e.preventDefault()
+    sendPanier()
+    }
+  })  
+
+  function displayCart(){
+    let counter = document.getElementById("counter")
+    if(!localStorage.counter){
+      counter.innerHTML= 0
+      return
+    }
+    counter.innerHTML= localStorage.counter
+  }
+  displayCart()
 
 displayPanier()
 

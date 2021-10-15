@@ -53,6 +53,14 @@ function callApi() {
 callApi()
 
 
-
+function displayCart(){
+    let counter = document.getElementById("counter")
+    if(!localStorage.counter){
+      counter.innerHTML= 0
+      return
+    }
+    counter.innerHTML= localStorage.counter
+  }
+ displayCart()
 
 
