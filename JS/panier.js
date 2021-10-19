@@ -1,7 +1,6 @@
 // - DEFINITION DES VARIABLES -
 //   ************************
-var product = []; // Contient la liste des produits
-var panier = []; // Contient le panier + la quantitée
+
 let form = document.getElementById("form");
 let lastName = document.getElementById("lastName");
 let firstName = document.getElementById("firstName");
