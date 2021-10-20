@@ -30,8 +30,6 @@ function callApi() {
                 get_products.appendChild(div)
             }
 
-            //panierInit() // Initialisation du localStorage 
-            //displayHtml()
             let loader = document.getElementById("loader");
             loader.classList.add("display-none");
         })

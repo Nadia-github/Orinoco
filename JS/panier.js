@@ -1,7 +1,6 @@
 // - DEFINITION DES VARIABLES -
 //   ************************
 
-let form = document.getElementById("form");
 let lastName = document.getElementById("lastName");
 let firstName = document.getElementById("firstName");
 let address = document.getElementById("address");
@@ -9,13 +8,6 @@ let city = document.getElementById("city");
 let email = document.getElementById("email");
 
 var total = 0;
-var contact = {
-        firstName: "",
-        lastName: "",
-        address: "",
-        city: "",
-        email: "",
-    };
 
 let storagePanier = JSON.parse(localStorage.panier);
 
@@ -61,7 +53,6 @@ function displayTotal() {
     }
 }
         if (total > 0) {
-            let parent = document.getElementById("container");
             let divTotal = document.getElementById("total")
             divTotal.innerHTML= `TOTAL : ${total.toFixed(2)} €`
             

@@ -1,4 +1,3 @@
-var product = [];
 
 // Affichage des centimes sur les prix
 function get_price(price){

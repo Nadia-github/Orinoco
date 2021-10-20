@@ -76,6 +76,8 @@ section{
     margin: 10px 0;
     border-radius: 10px;
     box-shadow:2px 2px 10px 2px #cbcbce;
+    display: block;
+    margin: auto;
 }
 
 .article__img:hover {
@@ -123,11 +125,6 @@ section{
 /* PAGE PRODUIT */
 .article__center{
     text-align: center;
-}
-
-.article__img{
-    display: block;
-    margin: auto;
 }
 
 form{
