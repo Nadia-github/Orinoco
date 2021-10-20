@@ -18,7 +18,6 @@ var contact = {
     };
 
 let storagePanier = JSON.parse(localStorage.panier);
-console.log(storagePanier)
 
 
 // Affichage du panier par ajout de HTML pour chaque produit
@@ -43,15 +42,12 @@ function displayPanier() {
           let product = storagePanier[key];
           var input = document.getElementById(key)
           input.addEventListener("change", function(){
-                    console.log(this.value)
-                    console.log(product)
                     changePanier(key, product, this.value)
                     let value = parseInt(this.value) * parseInt(product.prix);
                     this.nextElementSibling.innerHTML = (value/100).toFixed(2) +" €"; 
                     displayTotal()
                   })  
         }
-        console.log(total)
 }
       
 

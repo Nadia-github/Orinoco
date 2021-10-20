@@ -1,9 +1,3 @@
-// - DEFINITION DES VARIABLES -
-//   ************************
-
-var products = []; // Contient la liste des produits
-var panier = []; // Contient le panier + la quantitée
-
 
 // Affichage des centimes sur les prix
 
@@ -23,7 +17,6 @@ function callApi() {
         .then(products => {
             for (let i = 0; i<products.length; i++)
             {
-                console.log(products[i])
                 let div= document.createElement("div")
                 div.innerHTML=
                   "<h2 class='article__name'>" + products[i].name + "</h2>"
@@ -43,7 +36,6 @@ function callApi() {
             loader.classList.add("display-none");
         })
         .catch(err => {
-            console.log(err);
             let errorHtml = document.getElementById("errorGestion");
             let loader = document.getElementById("loader");
             loader.classList.add("display-none");

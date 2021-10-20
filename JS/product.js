@@ -12,7 +12,7 @@ let url = new URL(window.location.href)
 
 let id = url.searchParams.get("id")
 
-console.log(url.searchParams.get("id"))
+
 
 fetch("http://localhost:3000/api/teddies/" + id)
 .then(response => response.json())
@@ -44,7 +44,6 @@ function addOptions(select, options){
     content += "<option value="+i+">"+options[i]+"</option>"
   }
   select.innerHTML = content
-  console.log(select, options, content)
 }
 
 
