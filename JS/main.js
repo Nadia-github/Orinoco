@@ -36,7 +36,6 @@ function callApi() {
         .catch(err => {
             let errorHtml = document.getElementById("errorGestion");
             let loader = document.getElementById("loader");
-            loader.classList.add("display-none");
             errorHtml.classList.remove("display-none");
         });
 }

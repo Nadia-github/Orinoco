@@ -55,13 +55,11 @@ function displayTotal() {
         if (total > 0) {
             let divTotal = document.getElementById("total")
             divTotal.innerHTML= `TOTAL : ${total.toFixed(2)} €`
-            
         }
 }
 
 
-// Gestion du changement de quantité produit
-// Fonction appelé dans le HTML
+// Gestion du changement de quantité produit dans le localStorage
 
 function changePanier(key, product, quantite) {
   let panierBefore = JSON.parse(localStorage.panier);
@@ -87,6 +85,8 @@ function changePanier(key, product, quantite) {
       }
       localStorage.panier=JSON.stringify(panierBefore)
   }
+
+  
   
 function sendPanier (){
   const contact = {
