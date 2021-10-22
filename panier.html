@@ -22,10 +22,10 @@
                 <form class="panier__form" id="form">
         
                     <span class="panier__form__error display-none" id="lastNameError">Le nom doit être seulement composé des lettres de l'alphabet.</span>
-                    <input type="text" id="lastName" placeholder="Nom" required pattern="[a-zA-Z\s-]{2,10}" title="2 à 10 lettres">
+                    <input type="text" id="lastName" placeholder="Nom" required pattern="[a-zA-Z\s-éâ]{2,10}" title="2 à 10 lettres">
         
                     <span class="panier__form__error display-none" id="firstNameError">Le prénom doit être seulement composé des lettres de l'alphabet.</span>
-                    <input type="text" id="firstName" placeholder="Prénom" required pattern="[a-zA-Z\s-]{2,12}" title="2 à 12 lettres">
+                    <input type="text" id="firstName" placeholder="Prénom" required pattern="[a-zA-Z\s-éâ]{2,12}" title="2 à 12 lettres">
         
                     <span class="panier__form__error display-none" id="addressError">L'adresse doit être seulement composée de lettres et de chiffres.</span>
                     <input type="text" id="address" placeholder="Adresse" required pattern="[a-zA-Z0-9\s-éâ]+" title="Uniquement des lettres et chiffres">
@@ -35,7 +35,7 @@
 
                     <input type="text" id="zip" placeholder="Code Postal" required pattern="[\d]{5}" title="5 chiffres uniquement">
         
-                    <input type="email" id="email" placeholder="E-mail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" title="Adresse email invalide">
+                    <input type="email" id="email" placeholder="E-mail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" title="Adresse email valide">
         
                     <button type="submit" id="btn">Acheter</button>
                 </form>
