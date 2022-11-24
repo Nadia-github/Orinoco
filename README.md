@@ -17,7 +17,7 @@
   <li> Se placer dans le dossier back-end
   <li> Installer Node.js et npm (taper "node -v" et "npm -v" dans le terminal de l'éditeur de code pour vérifier que le tout est bien installé et les versions installées)
   <li> Lancer npm avec la commande "npm install" pour installer les dépendances
-  <li> Taper "node server.js" pour lancer le serveu est lancé, ouvrez la page suivant : https://nadia-github.github.io/NadiaChorches_5_31052021/
+  <li> Taper "node server.js" pour lancer le serveu est lancé, ouvrez la page suivant : https://nadia-github.github.io/Orinoco/
  
   
   <h1> Spécificités techniques </h1>
