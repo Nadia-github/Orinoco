@@ -13,11 +13,11 @@
 
   <h1> Prérequis </h1>  
   <ul>
-  <li>Cloner ce dépôt : https://github.com/OpenClassrooms-Student-Center/JWDP5 et créer un dossier back-end
+  <li> Cloner ce dépôt : https://github.com/OpenClassrooms-Student-Center/JWDP5 et créer un dossier back-end
   <li> Se placer dans le dossier back-end
   <li> Installer Node.js et npm (taper "node -v" et "npm -v" dans le terminal de l'éditeur de code pour vérifier que le tout est bien installé et les versions installées)
   <li> Lancer npm avec la commande "npm install" pour installer les dépendances
-  <li> Taper "node server.js" pour lancer le serveu est lancé, ouvrez la page suivant : https://nadia-github.github.io/Orinoco/
+  <li> Taper "node server.js" pour lancer le serveur, ouvrir la page suivante : https://nadia-github.github.io/Orinoco/
  
   
   <h1> Spécificités techniques </h1>
