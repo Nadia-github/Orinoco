@@ -11,11 +11,12 @@ var total = 0;
 
 let storagePanier = JSON.parse(localStorage.panier);
 
-
+ 
 // Affichage du panier par ajout de HTML pour chaque produit
 function displayPanier() {
         for (let key in storagePanier) {
             if (storagePanier[key].quantite > 0) {
+              console.log(storagePanier[key]);
                 let parent = document.getElementById("container");
                 parent.innerHTML+=`
                     <div id="container__article">  
