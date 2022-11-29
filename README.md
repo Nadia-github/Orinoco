@@ -11,7 +11,7 @@
   <li> Gérer les événements Javascript </li>
 </ul>
 
-<h2> Une démonstration de mon projet est disponible en ligne : https://www.youtube.com/watch?v=qk8etoDbv7Y </h2>  
+<h2> Une démonstration de mon projet est disponible en ligne : </h2>   https://www.youtube.com/watch?v=qk8etoDbv7Y
 
 <h2> Prérequis </h2>  
  <ul>
